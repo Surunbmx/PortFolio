@@ -2,7 +2,7 @@
     --primary-color: #bb89fa;
     --primary-color-back: #282828;
 
-    --secondary-color: #f0f0f0;
+    --secondary-color: #ffffff;
 
     --header-color: var(--secondary-color);
 
@@ -244,6 +244,7 @@ footer p {
 
 div.img_background {
     height: 50vh;
+    background-color: #bb89fa;
 }
 
 /* Articles*/
@@ -430,6 +431,16 @@ article .article_title + * {
     gap: 2rem 3rem;
 }
 
+.logo_item * {
+    text-align: center;
+}
+
+.logo_item > img {
+    width: 70%;
+    aspect-ratio: 1;
+    padding: 15%;
+}
+
 .skill_item * {
     text-align: center;
 }
@@ -449,8 +460,11 @@ article .article_title + * {
 
 #networks .logo_item {
     width: 100px;
-    filter: invert() brightness(9);
     transition-duration: var(--animation-duration-short);
+}
+
+#networks .logo_item > img {
+    filter: invert() brightness(9);
 }
 
 #networks .logo_item:hover {
