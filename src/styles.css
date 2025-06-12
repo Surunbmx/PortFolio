@@ -1,0 +1,445 @@
+﻿﻿:root {
+    --primary-color-red: #bb89fa;
+    --primary-color-white: #282828;
+
+    --dark-shadow-color: black;
+    --medium-shadow-color: rgba(0, 0, 0, 0.5);
+
+    --animation-duration-short: 0.2s;
+    --animation-duration-medium: 0.5s;
+    --animation-duration-long: 1s;
+}
+
+@media (orientation: landscape) {
+    .card {
+        flex-direction: row;
+        height: 200px;
+    }
+
+    .article_container {
+        width: 900px;
+    }
+
+    #skills {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .journey_item:has(>.journey_item_school):after {
+        transform: translateY(-50%);
+    }
+
+    .journey_item:has(>.journey_item_pro):after {
+        transform: translateY(-50%) translateX(-100%);
+    }
+
+    .journey_item:has(>.journey_item_school) {
+        justify-content: flex-end;
+    }
+
+    .journey_item:has(>.journey_item_pro) {
+        justify-content: flex-start;
+    }
+
+    .journey_item_school {
+        align-items: flex-start;
+    }
+
+    .journey_item_pro p {
+        text-align: right;
+    }
+
+    .journey_item_pro {
+        align-items: flex-end;
+    }
+
+    .journey_item_content {
+        width: 45%;
+    }
+
+
+    .journey_item:before {
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: var(--primary-color-red);
+    }
+
+    .journey_item:after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 3px;
+        border-radius: 6px;
+        top: 50%;
+        left: 50%;
+        background: var(--primary-color-red);
+    }
+
+    #journey_content::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-radius: 10px;
+        transform: translateX(-50%);
+        width: 5px;
+        background: var(--primary-color-red);
+    }
+}
+
+@media (orientation: portrait) {
+    .card {
+        flex-direction: column;
+        height: 700px;
+    }
+
+    .article_container {
+        width: 300px;
+    }
+
+    #skills {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .journey_item_content {
+        width: 85%;
+        align-self: flex-end;
+    }
+
+    .journey_item {
+        justify-content: flex-end;
+    }
+
+    .journey_item:before {
+        left: 0;
+    }
+
+    .journey_item:after {
+        left: 0;
+    }
+}
+
+* {
+    margin: 0;
+    font-family: Calibri, sans-serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 72px;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+h3 {
+    font-size: 56px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+p {
+    text-align: justify;
+}
+
+a{
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--primary-color-red);
+    color: var(--primary-color-white);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: var(--medium-shadow-color) 0 0 5px;
+    transition-duration: var(--animation-duration-short);
+}
+
+button:hover {
+    background-color: var(--primary-color-white);
+    color: var(--primary-color-red);
+}
+
+header {
+    height: 100vh;
+}
+
+footer {
+    background-color: var(--primary-color-red);
+    padding: 2rem 0;
+}
+
+footer p {
+    color: var(--primary-color-white);
+    text-align: center;
+}
+
+.date {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.img_background {
+    display: flex;
+    position: relative;
+    box-shadow: var(--dark-shadow-color) 0 0 25px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.img_background > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    z-index: -1;
+    background-color: var(--primary-color-red);
+}
+
+.img_background > .img_background_title {
+    color: var(--primary-color-white);
+    text-shadow: var(--dark-shadow-color) 0 0 5px;
+}
+
+div.img_background {
+    height: 50vh;
+}
+
+/* Articles*/
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+article .article_title + * {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.article_title {
+    margin: 3rem;
+}
+
+.article_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.journey_item {
+    display: flex;
+    position: relative;
+}
+
+.journey_item_content {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+.journey_item_experience {
+    align-self: flex-end;
+    align-items: flex-start;
+}
+
+.journey_item:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--primary-color-red);
+}
+
+.journey_item:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    border-radius: 6px;
+    top: 50%;
+    background: var(--primary-color-red);
+}
+
+#journey_content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    width: 5px;
+    background: var(--primary-color-red);
+}
+
+/* ----- CARDS ------------*/
+.card {
+    width: 100%;
+    display: flex;
+    background-color: var(--primary-color-red);
+    box-shadow: darkgray 0 5px 15px;
+    border-radius: 1rem;
+    transition-duration: var(--animation-duration-short);
+}
+
+.card:hover {
+    scale: 105%;
+}
+
+.card > * {
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.card_meta {
+    flex-basis: 40%;
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--dark-shadow-color) 0 0 5px;
+
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card:hover .card_meta > img {
+    opacity: 100%;
+    filter: blur(5px);
+}
+
+.card_meta > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition-duration: var(--animation-duration-short);
+}
+
+.card_meta_description_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    justify-content: space-between;
+    transition-duration: var(--animation-duration-short);
+}
+
+.card:hover .card_meta_description_container {
+    opacity: 100%;
+}
+
+.white{
+    color: white;
+}
+
+.card_meta_description {
+    width: 65%;
+    display: grid;
+    grid-template-rows: repeat(3, auto) 1fr;
+    color: var(--primary-color-white);
+    box-shadow: var(--dark-shadow-color) 0 0 3px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition-duration: 0.5s;
+    transform: translateX(-100%);
+}
+
+.card_meta_description button {
+    height: 35px;
+    align-self: flex-end;
+}
+
+.card:hover .card_meta_description {
+    transform: translateX(0px);
+}
+
+.card_description {
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+    flex-basis: 60%;
+    text-align: justify;
+    color: var(--primary-color-white);
+}
+
+.card_description *:nth-child(2)::after {
+    display: block;
+    width: 100%;
+    height: 5px;
+    content: "";
+    background-color: var(--primary-color-white);
+    border-radius: 5px;
+    margin: 0.5rem 0;
+}
+
+#skills {
+    display: grid;
+    gap: 2rem 3rem;
+}
+
+.skill_item * {
+    text-align: center;
+}
+
+.skill_item > img {
+    width: 70%;
+    aspect-ratio: 1;
+    padding: 15%;
+}
+
+#networks {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem 1rem;
+}
+
+#networks .logo_item {
+    width: 100px;
+    filter: invert() brightness(9);
+    transition-duration: var(--animation-duration-short);
+}
+
+#networks .logo_item:hover {
+    scale: 105%;
+}
