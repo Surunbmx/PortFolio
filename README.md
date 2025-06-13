@@ -1,4 +1,4 @@
 # PortFolio
 Noah Henno Portfolio
 
-Developed by [Théo Henno](https://github.com/hennotheo).
+Developed by [Noah Henno] and [Théo Henno](https://github.com/hennotheo).
