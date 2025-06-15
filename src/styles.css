@@ -482,3 +482,7 @@ article .article_title + * {
     height: auto;
     box-shadow: var(--dark-shadow-color) 0 0 25px;
 }
+
+.specific_article {
+    padding: 0px 25%;
+}
